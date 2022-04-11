@@ -2,10 +2,6 @@ from django.db import models
 
 
 class BookingForm(models.Model):
-    # ДАТА ЗАЕЗДА:
-    # ДАТА  ВЫЕЗДА:
-    # ВЗРОСЛЫЕ:
-    # ДЕТИ:
     arrival_date = models.DateTimeField( verbose_name='Дата заезда')
     departure_date = models.DateTimeField( verbose_name='Дата выезда')
     adults = models.PositiveSmallIntegerField(verbose_name="Взрослые")

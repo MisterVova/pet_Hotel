@@ -8,8 +8,9 @@ from .reason import Reason
 class HomePage(BasePage):
     heading = models.TextField(verbose_name="Заголовок", null=False)
     description = models.TextField(verbose_name="Описание", null=True)
-    blocks = models.ManyToManyField(Template, verbose_name="Блоки", related_name="reasons_HomePage")
-    reason = models.ManyToManyField(Reason, verbose_name="Reason", related_name="reasons2_HomePage")
+    html_template = models.ForeignKey(Template, verbose_name="html_template", related_name="template_HomePage",
+                                      on_delete=models.PROTECT)
+    reason = models.ManyToManyField(Reason, verbose_name="Reason", related_name="reasons_HomePage")
     template = "pages/home.html"
 
     def get_serializer(self):

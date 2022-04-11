@@ -1,14 +1,15 @@
 from django.db import models
 from django.http import HttpRequest
 from garpix_page.models import BasePage
-from blocks.models.block import Block
+from show.models import Template
 
 
 class HotelsPage(BasePage):
     template = "pages/hotels.html"
     heading = models.TextField(verbose_name="Заголовок", null=False)
     description = models.TextField(verbose_name="Описание", null=True)
-    blocks = models.ManyToManyField(Block, verbose_name="Блоки", related_name="reasons_HotelsPage")
+    html_template = models.ForeignKey(Template, verbose_name="html_template", related_name="template_HotelsPage",
+                                      on_delete=models.PROTECT)
 
     def get_serializer(self):
         from ..serializers import HotelsPageSerializer
