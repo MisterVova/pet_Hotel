@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html class="page" lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <title>HTML Academy: Седона</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+
+  <body class="page-body">
+    <header class="width-container">
+      <nav class="main-navigation">
+        <a class="main-header-logo">
+          <img src="img/logo.svg" width="138" height="70" alt="Логотип сайта Седона. City of Sedona.">
+        </a>
+        <ul class="site-navigation">
+          <li><a href="blank.html">Информация</a></li>
+          <li><a href="blank.html">Фото и видео</a></li>
+          <li><a href="blank.html">Карта штата</a></li>
+          <li><a href="hotels.html">Гостиницы</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="main-container width-container">
+
+      <h1 class="visually-hidden">Городок Седона</h1>
+
+      <section class="main-banner">
+        <h2 class="visually-hidden">Приветственный баннер</h2>
+        <p class="visually-hidden">Добро пожаловать в великолепную Седону! Потому что Гранд Каньон - отстой!</p>
+      </section>
+
+      <section class="features">
+        <h2 class="visually-hidden">Блок преимуществ</h2>
+        <div class="features-title">
+          <p>Седона &hairsp;&ndash;&hairsp; небольшой городок в Аризоне, заслуживающий большего!</p>
+          <p>Рассмотрим 5 причин, по которым Седона круче, чем Гранд Каньон!</p>
+        </div>
+        <ul class="features-list">
+          <li class="feature-item-1">
+            <div class="feature-item feature-main-city">
+              <h3>Настоящий <br> городок</h3>
+              <p>&ndash;&emsp13;№1&emsp13;&ndash;</p>
+              <p>Седона - не аттракцион для туристов, там течёт своя жизнь</p>
+            </div>
+            <ul class="recommendations-list">
+              <li class="recommendation-item">
+                <h4>Жильё</h4>
+                <p>Рекомендуем пожить в настоящем мотеле, всё как в кино!</p>
+              </li>
+              <li class="recommendation-item">
+                <h4>Еда</h4>
+                <p>Всегда заказывайте фирменный бургер, вы не разочаруетесь!</p>
+              </li>
+              <li class="recommendation-item">
+                <h4>Сувениры</h4>
+                <p>Не только китайского, но и местного производства!</p>
+              </li>
+            </ul>
+          </li>
+          <li class="feature-item-2">
+            <div class="feature-item feature-main-bridge">
+              <h3>Там есть <br> мост дьявола</h3>
+              <p>&ndash;&emsp13;№2&emsp13;&ndash;</p>
+              <p>Да, по нему можно пройти! Если конечно вы осмелитесь</p>
+            </div>
+          </li>
+          <li class="feature-item feature-standart">
+            <h3>Небольшая <br> площадь</h3>
+            <p>&ndash;&emsp13;№3&emsp13;&ndash;</p>
+            <p>Все достопримечательности <br> находятся очень близко</p>
+          </li>
+          <li class="feature-item feature-standart">
+            <h3>Красивая <br> дорога</h3>
+            <p>&ndash;&emsp13;№4&emsp13;&ndash;</p>
+            <p>Ехать в седону из лас-вегаса совсем<br>не скучно!</p>
+          </li>
+          <li class="feature-item feature-standart">
+            <h3>Мало <br> туристов</h3>
+            <p>&ndash;&emsp13;№5&emsp13;&ndash;</p>
+            <p>Большинство едет в гранд каньон <br> и толпится там</p>
+          </li>
+        </ul>
+      </section>
+
+      <section class="search">
+        <h2 class="visually-hidden">Блок поиска гостиницы в Седоне</h2>
+        <p>Заинтересовались?</p>
+        <p>Укажите предполагаемые даты поездки, <br> и забронируйте гостиницу в Седоне</p>
+        <button class="button button-form-show" type="button">Бронирование гостиницы</button>
+        <section class="modal">
+          <h3 class="visually-hidden">Форма поиска гостиницы в Седоне</h3>
+          <form class="search-form" action="#" method="get">
+            <p>
+              <label for="date-in">дата заезда:</label>
+              <input class="date-input" type="text" name="date-in" id="date-in" value="24 апреля 2017">
+              <button class="button button-date-input" type="button" name="date-in-icon" aria-label="открыть календарь выбора даты">
+                <svg aria-hidden="true" focusable="false" width="38" height="38" viewBox="-8 -7 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M16.406 3.02498H19.251C20.217 3.02498 21 3.84698 21 4.86198V21.164C21 22.179 20.217 23 19.251 23H1.75C0.784 23 0 22.179 0 21.164V4.86198C0 3.84698 0.784 3.02498 1.75 3.02498H4.593V1.64798C4.593 1.26698 4.887 0.958984 5.25 0.958984C5.612 0.958984 5.906 1.26698 5.906 1.64798V3.02498H9.844V1.64798C9.844 1.26698 10.138 0.958984 10.501 0.958984C10.862 0.958984 11.156 1.26698 11.156 1.64798V3.02498H15.094V1.64798C15.094 1.26698 15.387 0.958984 15.75 0.958984C16.112 0.958984 16.406 1.26698 16.406 1.64798V3.02498ZM19.5646 21.484C19.6466 21.3979 19.691 21.2828 19.688 21.164H19.689V4.86198C19.689 4.60898 19.493 4.40298 19.252 4.40298H16.407V5.78098C16.407 6.16198 16.113 6.46998 15.751 6.46998C15.388 6.46998 15.095 6.16198 15.095 5.78098V4.40298H11.157V5.78098C11.157 6.16198 10.863 6.46998 10.502 6.46998C10.139 6.46998 9.845 6.16198 9.845 5.78098V4.40298H5.907V5.78098C5.907 6.16198 5.613 6.46998 5.251 6.46998C4.888 6.46998 4.594 6.16198 4.594 5.78098V4.40298H1.75C1.50263 4.40953 1.30696 4.61458 1.312 4.86198V21.164C1.30696 21.4114 1.50263 21.6164 1.75 21.623H19.251C19.3698 21.6201 19.4826 21.5701 19.5646 21.484Z" fill="#A9A9A9"/>
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M4.59399 9.2251H7.21899V11.2911H4.59399V9.2251ZM4.59399 12.6681H7.21899V14.7351H4.59399V12.6681ZM7.21899 16.1121H4.59399V18.1781H7.21899V16.1121ZM9.18799 16.1121H11.813V18.1781H9.18799V16.1121ZM11.813 12.6681H9.18799V14.7351H11.813V12.6681ZM9.18799 9.2251H11.813V11.2911H9.18799V9.2251ZM16.406 16.1121H13.781V18.1781H16.406V16.1121ZM13.781 12.6681H16.406V14.7351H13.781V12.6681ZM16.406 9.2251H13.781V11.2911H16.406V9.2251Z" fill="#A9A9A9"/>
+                </svg>
+              </button>
+            </p>
+            <p>
+              <label for="date-out">дата выезда:</label>
+              <input class="date-input" type="text" name="date-out" id="date-out" value="4 июля 2017">
+              <button class="button button-date-input" type="button" name="date-out-icon" aria-label="открыть календарь выбора даты">
+                <svg aria-hidden="true" focusable="false" width="38" height="38" viewBox="-8 -7 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M16.406 3.02498H19.251C20.217 3.02498 21 3.84698 21 4.86198V21.164C21 22.179 20.217 23 19.251 23H1.75C0.784 23 0 22.179 0 21.164V4.86198C0 3.84698 0.784 3.02498 1.75 3.02498H4.593V1.64798C4.593 1.26698 4.887 0.958984 5.25 0.958984C5.612 0.958984 5.906 1.26698 5.906 1.64798V3.02498H9.844V1.64798C9.844 1.26698 10.138 0.958984 10.501 0.958984C10.862 0.958984 11.156 1.26698 11.156 1.64798V3.02498H15.094V1.64798C15.094 1.26698 15.387 0.958984 15.75 0.958984C16.112 0.958984 16.406 1.26698 16.406 1.64798V3.02498ZM19.5646 21.484C19.6466 21.3979 19.691 21.2828 19.688 21.164H19.689V4.86198C19.689 4.60898 19.493 4.40298 19.252 4.40298H16.407V5.78098C16.407 6.16198 16.113 6.46998 15.751 6.46998C15.388 6.46998 15.095 6.16198 15.095 5.78098V4.40298H11.157V5.78098C11.157 6.16198 10.863 6.46998 10.502 6.46998C10.139 6.46998 9.845 6.16198 9.845 5.78098V4.40298H5.907V5.78098C5.907 6.16198 5.613 6.46998 5.251 6.46998C4.888 6.46998 4.594 6.16198 4.594 5.78098V4.40298H1.75C1.50263 4.40953 1.30696 4.61458 1.312 4.86198V21.164C1.30696 21.4114 1.50263 21.6164 1.75 21.623H19.251C19.3698 21.6201 19.4826 21.5701 19.5646 21.484Z" fill="#A9A9A9"/>
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M4.59399 9.2251H7.21899V11.2911H4.59399V9.2251ZM4.59399 12.6681H7.21899V14.7351H4.59399V12.6681ZM7.21899 16.1121H4.59399V18.1781H7.21899V16.1121ZM9.18799 16.1121H11.813V18.1781H9.18799V16.1121ZM11.813 12.6681H9.18799V14.7351H11.813V12.6681ZM9.18799 9.2251H11.813V11.2911H9.18799V9.2251ZM16.406 16.1121H13.781V18.1781H16.406V16.1121ZM13.781 12.6681H16.406V14.7351H13.781V12.6681ZM16.406 9.2251H13.781V11.2911H16.406V9.2251Z" fill="#A9A9A9"/>
+                </svg>
+              </button>
+            </p>
+            <p>
+              <label for="adults">взрослые:</label>
+              <input class="number-input" type="text" name="adults" id="adults"  pattern="^[ 0-9]+$" value="2" aria-label="укажите количество взрослых">
+              <button class="button button-number-minus button-adults-minus" type="button" name="number-minus-icon" aria-label="уменьшить значение"></button>
+              <button class="button button-number-plus button-adults-plus" type="button" name="number-plus-icon" aria-label="увеличить значение"></button>
+
+              <label for="kids">дети:</label>
+              <input class="number-input" type="text" name="kids" id="kids"  pattern="^[ 0-9]+$" value="0" aria-label="укажите количество детей">
+              <button class="button button-number-minus button-kids-minus" type="button" name="number-minus-icon" aria-label="уменьшить значение"></button>
+              <button class="button button-number-plus button-kids-plus" type="button" name="number-plus-icon" aria-label="увеличить значение"></button>
+            </p>
+            <button class="button button-form-search" type="submit" name="button">найти</button>
+          </form>
+        </section>
+      </section>
+      <section class="map">
+        <h2 class="visually-hidden">Карта с указанием местоположения городка Седона</h2>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d839628.306850027!2d-111.75294857414956!3d34.710272691834135!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x872da132f942b00d%3A0x5548c523fa6c8efd!2z0KHQtdC00L7QvdCwLCDQkNGA0LjQt9C-0L3QsCA4NjMzNiwg0KHQqNCQ!5e0!3m2!1sru!2sru!4v1602518012667!5m2!1sru!2sru"
+          width="1200" height="594" allowfullscreen="" aria-hidden="false" tabindex="0">
+        </iframe>
+      </section>
+    </main>
+
+    <footer class="page-footer main-footer width-container">
+      <section class="footer-contacts">
+        <h2 class="visually-hidden">Контактная информация</h2>
+        <p>#visitsedona</p>
+        <p>тел: <a class="footer-phone" href="tel:+74956660166">+7(495) 666-01-66</a></p>
+      </section>
+
+      <section class="footer-social">
+        <h2 class="visually-hidden">Ссылки на соцсети</h2>
+        <ul>
+          <li>
+            <a class="social-button" href="#" aria-label="Твиттэр">
+              <svg aria-hidden="true" focusable="false" width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M10.95 1.14409C12.635 0.648089 13.934 1.41409 14.527 2.32309C15.2 2.09209 15.858 1.84209 16.538 1.61509C16.5249 2.30145 16.2117 2.94761 15.681 3.38309C16.366 3.55309 16.985 2.89209 16.985 2.89209C16.816 3.89209 15.979 4.68009 15.422 4.91609C15.191 11.6661 12.247 16.1331 5.34498 15.9981H4.89898C4.48898 15.9981 0.734977 15.5381 0.000976562 14.1111C2.27198 14.3071 3.89398 13.6891 4.69398 12.9341C3.73398 12.6341 2.01498 12.4571 1.71498 9.98409C2.06398 10.0901 2.27898 10.2121 2.90498 10.1031C1.70498 9.24709 0.373977 8.53009 0.447977 6.33009C0.732977 6.65809 1.51498 6.86609 1.78798 6.80209C1.08498 6.56109 -0.182023 3.44209 0.893977 1.85009C2.71198 3.70409 4.62898 5.45609 8.04598 5.62309C8.25398 3.33009 9.18298 1.79309 10.95 1.14409Z" fill="white"/>
+              </svg>
+            </a>
+          </li>
+          <li>
+            <a class="social-button" href="#" aria-label="Фэйсбук">
+              <svg aria-hidden="true" focusable="false" width="12" height="22" viewBox="0 0 12 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 4V0H8C5.79086 0 4 1.79086 4 4V8H0V12H4V22H8V12H12V8H8V4H12Z" fill="white"/>
+              </svg>
+            </a>
+          </li>
+          <li>
+            <a class="social-button" href="#" aria-label="Ютьюб">
+              <svg aria-hidden="true" focusable="false" width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M3 0H17C18.65 0 20 1.35 20 3V13C20 14.65 18.65 16 17 16H3C1.35 16 0 14.65 0 13V3C0 1.35 1.35 0 3 0ZM6.027 4.002V11.998L15.014 8L6.027 4.002Z" fill="white"/>
+              </svg>
+            </a>
+          </li>
+        </ul>
+      </section>
+
+      <div class="footer-copyright">
+
+      </div>
+    </footer>
+    <script src="js/script.js"></script>
+  </body>
+</html>
