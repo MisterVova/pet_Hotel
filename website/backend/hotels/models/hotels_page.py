@@ -48,8 +48,8 @@ class HotelsPage(BasePage):
         my_context = {
             "context": {
                 "tesst": "dasdada",
-                # "object": obj.id,
-                "object": obj.get_serializer()(obj).data,
+                "object": obj.id,
+                # "object": obj.get_serializer()(obj).data,
                 # "object": HotelsPageSerializer(obj).data,
                 "hotels": hotels,
             }

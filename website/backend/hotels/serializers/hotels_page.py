@@ -1,11 +1,11 @@
 from rest_framework import serializers
 
 from ..models import HotelsPage
-from show.serializers import TemplateSerializer
+# from show.serializers import TemplateSerializer
 
 
 class HotelsPageSerializer(serializers.ModelSerializer):
-    blocks = TemplateSerializer(many=True)
+    # html_template = TemplateSerializer()
 
     class Meta:
         model = HotelsPage

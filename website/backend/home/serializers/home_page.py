@@ -1,12 +1,12 @@
 from rest_framework import serializers
 
-from show.serializers import TemplateSerializer
+# from show.serializers import TemplateSerializer
 from .reason import ReasonSerializer
 from ..models import HomePage
 
 
 class HomePageSerializer(serializers.ModelSerializer):
-    blocks = TemplateSerializer(many=True)
+    # html_template = TemplateSerializer()
     reason = ReasonSerializer(many=True)
 
     class Meta:

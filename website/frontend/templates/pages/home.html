@@ -5,4 +5,22 @@
 {% include 'include/breadcrumb.html' %}
 
 <h1>{{ object.title }}</h1>
+<div class="results-buttons">
+    <a class="button button-info" href="blank.html">Подробнее</a>
+    <button class="button button-reserv" type="button" name="reserv">Забронировать</button>
+</div>
+
+<h1>{{ object.title }}</h1>
+<div><h3>Заголовок:</h3>
+    <p> {{ object.heading }} </p></div>
+<div><h3>Краткое описание статьи:</h3>
+    <p> {{ object.description}} </p></div>
+<!--    <div> <h3>Основной текст статьи:</h3> <p>  {{ object.content|safe }} </p></div>-->
+
+
+---------------------------------------------------------------------
+<div>
+    {% include 'include/show/template.html' %}
+</div>
+
 {% endblock %}

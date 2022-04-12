@@ -1,5 +1,5 @@
 from django.db import models
-from django.template import Template, Context
+from django.template import Template as TemplateRender, Context
 from django.utils.safestring import mark_safe
 
 
@@ -20,16 +20,24 @@ class Template(models.Model):
     #     # return f'{abc}'
 
     def render_to_html(self, context):
-        # block_html = ""
-        try:
-            layout = self.template
-            template = Template(layout)
-            render_context = Context({"object": context})
-            block_html = template.render(render_context)
-        except Exception:
-            block_html = ""
-            # print()
-            # pass
+        # # block_html = ""
+        # try:
+        #     layout = self.template
+        #     print("layout+" , layout)
+        #     template = Template(layout)
+        #     render_context = Context({"object": context})
+        #     block_html = template.render(render_context)
+        # except Exception:
+        #     block_html = ""
+        #     print("Exception")
+        #     # pass
+
+        layout = self.template
+        # print("layout+", layout)
+        template = TemplateRender(layout)
+        render_context = Context({"object": context})
+        block_html = template.render(render_context)
+
         return mark_safe(block_html)
 
     class Meta:
