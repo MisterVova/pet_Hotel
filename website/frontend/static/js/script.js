@@ -15,7 +15,7 @@ let isStorageSupport = true;
 let storageAdults_count = "";
 let storageKids_count = "";
 
-searchPopup.classList.add("modal-close")
+//searchPopup.classList.add("modal-close")
 
 try {
   storageAdults_count = localStorage.getItem("adults");

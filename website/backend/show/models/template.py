@@ -1,5 +1,5 @@
 from django.db import models
-from django.template import Template as TemplateRender, Context
+from django.template import Template as TemplateRender, Context, RequestContext
 from django.utils.safestring import mark_safe
 
 
@@ -18,8 +18,10 @@ class Template(models.Model):
     #     # return f'asa'
     #     return f'<h5>:{self.title}:</h5>'
     #     # return f'{abc}'
+    # from django.views.decorators.csrf import csrf_protect
 
-    def render_to_html(self, context):
+    # @csrf_protect
+    def render_to_html(self, obj=None, other=None, csrf_token_html=None):
         # # block_html = ""
         # try:
         #     layout = self.template
@@ -32,13 +34,23 @@ class Template(models.Model):
         #     print("Exception")
         #     # pass
 
+        context = {
+            "object": obj,
+            "other": other,
+            "csrf_token_html" : csrf_token_html,
+        }
+
         layout = self.template
         # print("layout+", layout)
         template = TemplateRender(layout)
-        render_context = Context({"object": context})
+
+        # render_context = RequestContext(context)
+        render_context = Context(context)
+        # print("context+", render_context)
         block_html = template.render(render_context)
 
-        return mark_safe(block_html)
+        return block_html
+        # return mark_safe(block_html)
 
     class Meta:
         ordering = ('destiny', 'title')

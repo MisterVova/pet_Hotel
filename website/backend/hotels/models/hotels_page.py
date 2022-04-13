@@ -66,24 +66,24 @@ class HotelsPage(BasePage):
         print("request=", request)
         if request == None:
             return context
-        # form = {
+        # forms = {
         #     # "all_tags": Tag.objects.values()
-        #     "form": FilterHotelsForm().values()
+        #     "forms": FilterHotelsForm().values()
         # }
-        # context.update(form)
+        # context.update(forms)
 
         # if request.method == "GET":
-        #     form = FilterHotelsForm(request.GET)
-        #     print("form=\n", form)
-        #     if form.is_valid():
-        #         print("form=ok", form)
+        #     forms = FilterHotelsForm(request.GET)
+        #     print("forms=\n", forms)
+        #     if forms.is_valid():
+        #         print("forms=ok", forms)
 
         if 'apartments' in request.GET:
             print("apartments=", request.GET['apartments'])
             # message = 'You searched for: %r' % request.GET['q']
         else:
-            print("apartments=", "'You submitted an empty form.'")
-            # message = 'You submitted an empty form.'
+            print("apartments=", "'You submitted an empty forms.'")
+            # message = 'You submitted an empty forms.'
 
         return context
 

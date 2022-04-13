@@ -6,7 +6,6 @@ class BookingForm(models.Model):
     departure_date = models.DateTimeField( verbose_name='Дата выезда')
     adults = models.PositiveSmallIntegerField(verbose_name="Взрослые")
     children = models.PositiveSmallIntegerField(verbose_name="Дети")
-
     email = models.EmailField(verbose_name='Email')
     comment = models.TextField(verbose_name='Комментарий')
     created_at = models.DateTimeField(auto_now_add=True, verbose_name='Дата создания')
@@ -18,3 +17,11 @@ class BookingForm(models.Model):
         ordering = ('-created_at',)
         verbose_name = 'Бронирование'
         verbose_name_plural = 'Бронирования'
+
+                
+                
+                
+                
+                
+                
+                
