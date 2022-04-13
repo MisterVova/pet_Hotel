@@ -2,8 +2,8 @@ from django.db import models
 
 
 class BookingForm(models.Model):
-    arrival_date = models.DateTimeField( verbose_name='Дата заезда')
-    departure_date = models.DateTimeField( verbose_name='Дата выезда')
+    arrival_date = models.DateTimeField(verbose_name='Дата заезда')
+    departure_date = models.DateTimeField(verbose_name='Дата выезда')
     adults = models.PositiveSmallIntegerField(verbose_name="Взрослые")
     children = models.PositiveSmallIntegerField(verbose_name="Дети")
     email = models.EmailField(verbose_name='Email')
@@ -17,11 +17,3 @@ class BookingForm(models.Model):
         ordering = ('-created_at',)
         verbose_name = 'Бронирование'
         verbose_name_plural = 'Бронирования'
-
-                
-                
-                
-                
-                
-                
-                

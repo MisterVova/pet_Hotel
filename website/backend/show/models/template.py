@@ -21,7 +21,7 @@ class Template(models.Model):
     # from django.views.decorators.csrf import csrf_protect
 
     # @csrf_protect
-    def render_to_html(self, obj=None, other=None, csrf_token_html=None):
+    def render_to_html(self, obj=None, other=None):
         # # block_html = ""
         # try:
         #     layout = self.template
@@ -37,7 +37,6 @@ class Template(models.Model):
         context = {
             "object": obj,
             "other": other,
-            "csrf_token_html" : csrf_token_html,
         }
 
         layout = self.template

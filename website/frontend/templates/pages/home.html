@@ -3,39 +3,15 @@
 {% block content %}
 
 
-
-
-
 {# {% include 'include/breadcrumb.html' %} #}
 
 
 {# Добавляем содержимое Страницы согласно шаблону  #}
 {% load show_template_tags%}
 {% autoescape off %}
-{% render_html template=object.html_template obj=object other=other csrf_token_html=other.csrf_token_html%}
+{% render_html template=object.html_template obj=object other=other %}
 {% endautoescape %}
 {# end Добавляем содержимое Страницы согласно шаблону  #}
-
-
-
-<!--{% autoescape off %}-->
-<!--{{ other.csrf_token_html }}-->
-<!--выв Э {{ other.csrf_token }}-->
-<!--{% endautoescape %}-->
-
-
-<!--{% if other.message %}-->
-<!--<div class="alert alert-success mt-3" role="alert">-->
-<!--    {{ other.message }}-->
-<!--</div>-->
-<!--{% endif %}-->
-
-<!--{% if other.form_hotel_booking.errors %}-->
-<!--    <div class="alert alert-danger mt-3" role="alert">-->
-<!--        <div>При отправке возникли ошибки:</div>-->
-<!--        <div>{{ other.form_hotel_booking.errors }}</div>-->
-<!--    </div>-->
-<!--{% endif %}-->
 
 
 {% endblock %}

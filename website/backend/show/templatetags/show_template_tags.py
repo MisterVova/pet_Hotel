@@ -20,12 +20,12 @@ register = template.Library()
 
 
 @register.simple_tag(name="render_html")
-def template_render_to_html(template, obj=None, other=None, csrf_token_html=None):
+def template_render_to_html(template, obj=None, other=None):
     # context = {
     #     "object": obj,
     #     "other": other,
     # }
-    return template.render_to_html(obj, other, csrf_token_html)
+    return template.render_to_html(obj, other)
     # return f"render::{template.render_to_html(obj,other)}::render"
 
 
