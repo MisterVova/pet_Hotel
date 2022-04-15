@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from ..models import HotelsPage
+from ..models.hotels_page import HotelsPage
 # from show.serializers import TemplateSerializer
 
 

@@ -7,8 +7,8 @@ from ..models import Hotel
 
 class HotelSerializer(serializers.ModelSerializer):
 
-    housing_type = HousingTypeSerializer
-    infrastructure = InfrastructureSerializer
+    housing_type = HousingTypeSerializer()
+    infrastructure = InfrastructureSerializer(many=True)
 
     class Meta:
         model = Hotel

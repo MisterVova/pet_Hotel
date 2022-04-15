@@ -43,15 +43,15 @@ class HomePage(BasePage):
             form = BookingModelForm()
         from django.middleware.csrf import get_token
         csrf_token = get_token(request)
-        csrf_token_html = '<input type="hidden" name="csrfmiddlewaretoken" value="{}" />'.format(csrf_token)
+        # csrf_token_html = '<input type="hidden" name="csrfmiddlewaretoken" value="{}" />'.format(csrf_token)
 
         # print(request.get_raw_uri())
         other = {
             # "other": Tag.objects.values()
             "other": {
-                "test": f"test {self.heading}",
+                # "test": f"test {self.heading}",
                 "form_hotel_booking": form,
-                "csrf_token_html" : csrf_token_html,
+                # "csrf_token_html" : csrf_token_html,
                 "csrf_token": csrf_token,
                 'message': message,
                 # "form_hotel_booking_data": form.data,

@@ -2,12 +2,14 @@
 
 {% block content %}
 
-{% include 'include/breadcrumb.html' %}
+{# {% include 'include/breadcrumb.html' %} #}
 
-<h1>{{ object.title }}</h1>
 
-<div>
-    {% include 'include/show/template.html' %}
-</div>
+{# Добавляем содержимое Страницы согласно шаблону #}
+{% load show_template_tags%}
+{% autoescape off %}
+{% render_html template=object.html_template obj=object other=other %}
+{% endautoescape %}
+{# end Добавляем содержимое Страницы согласно шаблону #}
 
 {% endblock %}
