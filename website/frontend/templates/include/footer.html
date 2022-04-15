@@ -1,9 +1,8 @@
 
-<footer class="footer">
-    <div class="container">
-        <span class="text-muted">
-            {% include 'menus/footer_menu.html' with menu=menus.footer_menu %}
-        </span>
-    </div>
-</footer>
+{# Добавляем содержимое Страницы согласно шаблону #}
+{% load show_template_tags%}
+{% autoescape off %}
+{% render_template_by_slug  slug="footer" obj=object other=menus.footer_menu %}
+{% endautoescape %}
+{# end Добавляем содержимое Страницы согласно шаблону #}
 

@@ -1,0 +1,26 @@
+<footer class="page-footer main-footer width-container">
+    <section class="footer-contacts">
+        <h2 class="visually-hidden">Контактная информация</h2>
+        <p>#visitsedona</p>
+        <p>тел: <a class="footer-phone" href="tel:+74956660166">+7(495) 666-01-66</a></p>
+    </section>
+
+    <section class="footer-social">
+
+        <h2 class="visually-hidden">Ссылки на соцсети</h2>
+        <ul>
+            {% for menu_item in other %}
+            <li>
+                <a class="social-button" href="{{ menu_item.get_link }}" aria-label="{{ menu_item.title }}">
+                    <svg aria-hidden="true" focusable="false" width="12" height="22" viewBox="0 0 12 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 4V0H8C5.79086 0 4 1.79086 4 4V8H0V12H4V22H8V12H12V8H8V4H12Z" fill="white"/>
+                    </svg>
+                </a>
+            </li>
+            {% endfor %}
+        </ul>
+    </section>
+
+    <div class="footer-copyright">
+    </div>
+</footer>

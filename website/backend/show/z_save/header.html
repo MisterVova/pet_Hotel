@@ -1,0 +1,31 @@
+<header class="width-container">
+    <nav class="main-navigation">
+        <ul class="site-navigation">
+            {% for menu_item in other %}
+            {% if forloop.counter == 1 %}
+            <a
+                    class="main-header-logo"
+                    {% if not menu_item.is_current %}href="{{ menu_item.get_link }}"{% endif %}
+                    {% if menu_item.target_blank %}target="_blank" {% endif %}
+            >
+                <img src="{{ menu_item.icon }}" width="138" height="70" alt="Логотип сайта Седона. City of Sedona.">
+            </a>
+            {% else %}
+
+            <li {% if menu_item.is_current %}class="active-page"{% endif %}>
+                <a
+                        class="nav-link {% if menu_item.is_current %}active{% endif %}"
+                        aria-current="page"
+                        {% if menu_item.target_blank %}target="_blank" {% endif %}
+                        href="{{ menu_item.get_link }}"
+                >
+                    {{ menu_item.title }}
+                </a>
+            </li>
+
+            {% endif %}
+            {% endfor %}
+
+        </ul>
+    </nav>
+</header>

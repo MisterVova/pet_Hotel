@@ -35,6 +35,7 @@ def template_test(p1=None, p2=None, p3=None):
             p1={p1}<br>p2={p2}<br>p3={p3}
            """
 
+
 #
 # @register.simple_tag(name="all_context_render_to_html")
 # def all_context_render_to_html(templates, context):
@@ -47,3 +48,18 @@ def template_test(p1=None, p2=None, p3=None):
 #         #     pass
 #
 #     return ret
+
+@register.simple_tag(name="render_template_by_slug")
+def render_template_by_slug_html(slug, obj=None, other=None):
+    # context = {
+    #     "object": obj,
+    #     "other": other,
+    # }
+    from show.models.template import Template
+    try:
+        template = Template.objects.get(slug=slug)
+    except Template.DoesNotExist:
+        return f"<h1>Template.DoesNotExist</h1><br>slug={slug}<br>obj={obj}<br>other={other} "
+
+    return template.render_to_html(obj, other)
+    # return f"render::{template.render_to_html(obj,other)}::render"

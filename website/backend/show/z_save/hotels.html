@@ -1,0 +1,156 @@
+<main class="hotels-main width-container">
+    <h1 class="visually-hidden">Выбор гостиницы в Седоне</h1>
+
+    <section class="parameters-form">
+        <h2 class="visually-hidden">Фильтр параметров поиска</h2>
+        <form class="filter" method="get" action="#">
+            <fieldset class="filter-item">
+                <legend>Инфраструктура:</legend>
+                <ul>
+                    <li class="filter-checkbox">
+                        <input class="visually-hidden filter-input-checkbox filter-input" type="checkbox" name="pool" id="filter-pool" {% if other.query_dict.pool %} checked {% endif %}>
+                        <label for="filter-pool">Бассейн</label>
+                    </li>
+                    <li class="filter-checkbox">
+
+                        <input class="visually-hidden filter-input-checkbox filter-input" type="checkbox" name="parking" id="filter-parking" {% if other.query_dict.parking %} checked {% endif %}>
+
+                        <label for="filter-parking">Парковка</label>
+                    </li>
+                    <li class="filter-checkbox">
+                        <input class="visually-hidden filter-input-checkbox filter-input" type="checkbox" name="wi_fi" id="filter-wi-fi" {% if other.query_dict.wi_fi %} checked {% endif %}>
+                        <label for="filter-wi-fi">wi-fi</label>
+                    </li>
+                </ul>
+            </fieldset>
+            <fieldset class="filter-item">
+                <legend>Тип жилья:</legend>
+                <ul>
+                    <li class="filter-checkbox">
+                        <input class="visually-hidden filter-input-checkbox filter-input" type="checkbox" name="hotel" id="filter-hotel" {% if other.query_dict.hotel %} checked {% endif %}>
+                        <label for="filter-hotel">Гостиница</label>
+                    </li>
+                    <li class="filter-checkbox">
+                        <input class="visually-hidden filter-input-checkbox filter-input" type="checkbox" name="motel" id="filter-motel" {% if other.query_dict.motel %} checked {% endif %}>
+                        <label for="filter-motel">Мотель</label>
+                    </li>
+                    <li class="filter-checkbox">
+                        <input class="visually-hidden filter-input-checkbox filter-input" type="checkbox" name="apartments" id="filter-apartments" {% if other.query_dict.apartments %} checked {% endif %}>
+                        <label for="filter-apartments">Апартаменты</label>
+                    </li>
+                </ul>
+            </fieldset>
+            <fieldset class="filter-item">
+                <legend>Стоимость в сутки (р):</legend>
+                <div class="range-filter">
+                    <div class="price-controls">
+                        <label class="min-price" aria-label="введите минимальное значение">
+                            <input type="text" name="min_price" placeholder="от 0" {% if other.query_dict.min_price %} value="{{ other.query_dict.min_price }}" {% endif %}>
+                        </label>
+                        <label class="max-price" aria-label="введите максимальное значение">
+                            <input type="text" name="max_price" placeholder="до 3000" {% if other.query_dict.max_price %} value="{{ other.query_dict.max_price }}" {% endif %} >
+                        </label>
+                    </div>
+                </div>
+                <button type="submit" class="button filter-button">Показать</button>
+            </fieldset>
+        </form>
+    </section>
+
+
+    <section class="search-results">
+        <h2 class="visually-hidden">Результаты поиска</h2>
+        <div class="results-sort">
+            <div class="results-sum">
+                <p>Найдено:</p>
+                <div class="results-sum-value">3</div>
+            </div>
+            <div class="sort-controls">
+                <h3>Сортировка:</h3>
+                <div class="sort-parameters">
+                    <button onclick="filters(this)" data-parametr-name="ordering" data-parametr-value="min_price" class="button sort-parameters-button {% if other.query_dict.ordering|cut:'+'|cut:'-' == 'min_price' %}current{% endif %}" type="button">По цене</button>
+                    <button onclick="filters(this)" data-parametr-name="ordering" data-parametr-value="housing_type" class="button sort-parameters-button {% if other.query_dict.ordering|cut:'+'|cut:'-' == 'housing_type' %}current{% endif %}" type="button">По типу</button>
+                    <button onclick="filters(this)" data-parametr-name="ordering" data-parametr-value="rating" class="button sort-parameters-button {% if other.query_dict.ordering|cut:'+'|cut:'-' == 'rating' %}current{% endif %}" type="button">По рейтингу</button>
+                </div>
+            </div>
+        </div>
+
+
+<ul class="results-list">
+            {% for item in other.hotels %}
+
+            <li class="results-item">
+                <a class="hotel-photo" href="#">
+                    <img src="{{ item.image }}" width="135" height="90" alt="{{ item.text }}">
+
+                </a>
+                <div class="results-description">
+                    <h3><a class="hotel-name" href="blank.html">{{ item.name }}</a></h3>
+                    <div class="hotel-characteristics">
+                        <p>{{ item.housing_type.name }}</p>
+
+                        <p>От {{ item.min_price }} Р.</p>
+
+                    </div>
+                    <div class="results-buttons">
+                        <a class="button button-info" href="blank.html">Подробнее</a>
+                        <button class="button button-reserv" type="button" name="reserv">Забронировать</button>
+                    </div>
+                </div>
+                <div class="results-rating">
+                    <span class="visually-hidden">У отеля {{ item.star }} звезды</span>
+                    <ul class="rating-list">
+                        {# не нашёл как сделать циклам #}
+                        {% if item.star >= 1 %}
+                        <li></li>
+                        {% endif %}
+                        {% if item.star >= 2 %}
+                        <li></li>
+                        {% endif %}
+                        {% if item.star >= 3 %}
+                        <li></li>
+                        {% endif %}
+                        {% if item.star >= 4 %}
+                        <li></li>
+                        {% endif %}
+                        {% if item.star >= 5 %}
+                        <li></li>
+                        {% endif %}
+
+                        {# {% for s in item.star %} #}
+                        <!-- <li></li>-->
+                        {# {% endfor %} #}
+
+                    </ul>
+                    <p class="rating-value">Рейтинг: {{ item.rating }}</p>
+                </div>
+            </li>
+            {% endfor %}
+        </ul>
+
+
+<ul class="pagination">
+<script>
+const onclickPaginator = (e) => {
+    const currentUrl = new URL(location.toString());
+    let parametrName = e.getAttribute('data-parametr-name');
+    let parametrValue = e.getAttribute('data-parametr-value');
+    currentUrl.searchParams.set(parametrName, parametrValue);
+    savedParametrValue(parametrName, parametrValue);
+    location.assign(currentUrl.href);
+}
+</script>
+    {% for pp in other.paginator.page_range_beauty %}
+    {% if pp.0 == other.paginator.page_number %}
+    <li class="pagination-item active">
+    {% else %}
+    <li class="pagination-item">
+    {% endif %}
+        <a href="#" onclick="onclickPaginator(this)" data-parametr-name="page" data-parametr-value="{{pp.0}}" > {{pp.1}} </a>
+    </li>
+    {% endfor %}
+</ul>
+
+      </section>
+    </main>
+<br><br><br><br><br>
